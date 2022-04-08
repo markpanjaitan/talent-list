@@ -11,8 +11,9 @@
 </head>
 <body>
 	<div class="container">
+		<h1><a th:href = "@{/}"> Talent List </a></h1>
+		<hr>
 		<h2> Add Talent </h2>
-		<hr>	
 
 		<form action="#" th:action="@{/saveTalent}" th:object="${talent}" method="POST">
 			<input type="text" th:field="*{firstName}"

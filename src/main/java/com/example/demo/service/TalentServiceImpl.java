@@ -41,5 +41,11 @@ public class TalentServiceImpl implements TalentService{
 		return talent;
 	}
 
+	@Override
+	public void deleteTalent(long id) {
+		// TODO Auto-generated method stub
+		this.talentRepo.deleteById(id);
+	}
+
 	
 }

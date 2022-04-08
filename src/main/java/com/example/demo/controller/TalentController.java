@@ -43,6 +43,12 @@ public class TalentController {
 		Talent talent = talentService.findById(id);
 		model.addAttribute("talent",talent);
 		return "update_talent";
-	}	
+	}
+	
+	@GetMapping("/deleteTalent/{id}")
+	public String deleteTalent(@PathVariable(value = "id") long id) {
+		this.talentService.deleteTalent(id);
+		return "redirect:/";
+	}
 	
 }
