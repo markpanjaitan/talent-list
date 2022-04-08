@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+<meta charset="ISO-8859-1">
+<title>Talent Management System</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<h2> Add Talent </h2>
+		<hr>	
+
+		<form action="#" th:action="@{/saveTalent}" th:object="${talent}" method="POST">
+			<input type="text" th:field="*{firstName}"
+				placeholder="Talent First Name" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{lastName}" 
+				placeholder="Talent Last Name" class="form-control mb-4 col-4"> 
+			<input type="text" th:field="*{email}" 
+				placeholder="Talent Email" class="form-control mb-4 col-4">
+				
+			<button type="submit" class="btn btn-info col-2"> Save Talent </button>	
+		</form>
+
+	</div>
+</body>
+</html>

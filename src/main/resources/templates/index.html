@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Talent Management System</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
 </head>
 <body>
 
-<div align="center">
-	<h1>Talent List</h1>
-	<table>
-		<head>
+	<div class="container my-2">
+		<h1>Talent List</h1>
+		<table border="1" class="table table-striped table-responsive-md">
+			<head>
 			<tr>
 				<th>Talent First Name</th>
 				<th>Talent Last Name</th>
 				<th>Talent Email</th>
+				<th>Actions</th>
 			</tr>
-		</head>
-		<body>
+			</head>
+			<body>
 			<tr th:each="talent : ${listTalent}">
 				<td th:text="${talent.firstName}"></td>
 				<td th:text="${talent.lastName}"></td>
-				<td th:text="${talent.email}"></td>								
+				<td th:text="${talent.email}"></td>
+				<td>
+					<a th:href="@{/showUpdateForm/{id}(id=${talent.id})}" class="btn btn-primary"> Update </a>
+				</td>
 			</tr>
-		</body>
-	</table>
-</div>
+		</table>
+		<!-- @ symbol = root url of your app -->
+		<a th:href = "@{/showNewTalentForm}" class="btn btn-primary btn-sm mb-3"> Add New Talent</a>		
+	</div>
+
 </body>
+
+
 </html>

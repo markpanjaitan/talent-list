@@ -7,4 +7,6 @@ import com.example.demo.model.Talent;
 public interface TalentService {
 	
 	List<Talent> getAllTalent();
+	void saveTalent(Talent talent);
+	Talent findById(long id) throws Exception;
 }
