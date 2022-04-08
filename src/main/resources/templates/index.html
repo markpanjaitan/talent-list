@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Talent Management System</title>
+</head>
+<body>
+
+<div align="center">
+	<h1>Talent List</h1>
+	<table>
+		<head>
+			<tr>
+				<th>Talent First Name</th>
+				<th>Talent Last Name</th>
+				<th>Talent Email</th>
+			</tr>
+		</head>
+		<body>
+			<tr th:each="talent : ${listTalent}">
+				<td th:text="${talent.firstName}"></td>
+				<td th:text="${talent.lastName}"></td>
+				<td th:text="${talent.email}"></td>								
+			</tr>
+		</body>
+	</table>
+</div>
+</body>
+</html>
